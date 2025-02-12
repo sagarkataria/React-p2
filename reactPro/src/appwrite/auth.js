@@ -8,7 +8,7 @@ export  class AuthService {
 
     constructor(){
         this.client
-                  .setEndPoint(config.appwriteUrl)
+                  .setEndpoint(config.appwriteUrl)
                   .setProject(config.appwriteProjectId);
         this.account=new Account(this.client)
     }
@@ -18,7 +18,7 @@ export  class AuthService {
           const userACcount = await this.account.create(ID.unique(),email,password,name)
           if(userACcount){
             // Call another method
-            return this.login({email,password})
+            return await this.login({email,password})
           }else{
             return userACcount;
           }
@@ -33,7 +33,7 @@ export  class AuthService {
 
     async getCurrentUser(){
         try {
-            await this.account.get();
+           return await this.account.get();
         } catch (error) {
             console.log("Appwrite service :: getCurrentUser :: error ",error)
         }
@@ -54,4 +54,4 @@ export  class AuthService {
 
 const authService = new AuthService();
 
-export default AuthService;
+export default authService;
