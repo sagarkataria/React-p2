@@ -49,7 +49,7 @@ function Signup() {
           </Link>
         </p>
         {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
-      </div>
+     
       <form onSubmit={handleSubmit(create)} className="mt-8">
         <div className="space-y-5">
           <Input
@@ -86,6 +86,7 @@ function Signup() {
         </div>
       </form>
     </div>
+     </div>
   );
 }
 

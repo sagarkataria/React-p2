@@ -55,7 +55,7 @@ function Login() {
                     {...register("email",{
                         required:true,
                         validate:{
-                            matchPattern : /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || "Email address must be a valid address"
+                            matchPattern :(value)=> /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || "Email address must be a valid address"
                         }
                     })}
                     />
