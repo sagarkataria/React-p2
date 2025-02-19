@@ -6,9 +6,8 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/Home.jsx';
-import { AuthLayout } from './components/index.js';
+import { AuthLayout, Login} from './components/index.js';
 import AllPost from './pages/AllPost.jsx';
-import Login from './pages/Login';
 import Signup from './pages/Signup';
 import AddPost from './pages/AddPost.jsx';
 import EditPost from './pages/EditPost';
@@ -18,7 +17,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    clildren: [
+    children: [
       {
         path: '/',
         element: <Home />,
@@ -26,7 +25,7 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: (
-          <AuthLayout authetication={false}>
+          <AuthLayout authentication={false}>
             <Login />
           </AuthLayout>
         ),
@@ -34,23 +33,23 @@ const router = createBrowserRouter([
       {
         path:'/signup',
         element: (
-          <AuthLayout authetication={false}>
+          <AuthLayout authentication={false}>
             <Signup />
           </AuthLayout>
         )
       },
       {
-        path:"all-posts",
+        path:"/all-posts",
         element:(
-          <AuthLayout authetication>
+          <AuthLayout authentication>
             <AllPost/>
           </AuthLayout>
         )
       },
       {
-        path:'add-post',
+        path:'/add-post',
         element:(
-          <AuthLayout authetication>
+          <AuthLayout authentication>
             <AddPost/>
           </AuthLayout>
         )
@@ -58,7 +57,7 @@ const router = createBrowserRouter([
       {
         path:"/edit-post/:slug",
         element:(
-          <AuthLayout authetication>
+          <AuthLayout authentication>
             <EditPost/>
           </AuthLayout>
         )
@@ -66,7 +65,7 @@ const router = createBrowserRouter([
       {
         path:"/post/:slug",
         element:(
-          <AuthLayout authetication>
+          <AuthLayout authentication>
             <Post/>
           </AuthLayout>
         )

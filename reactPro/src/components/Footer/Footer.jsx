@@ -6,7 +6,7 @@ function Footer() {
   return (
     <section className="relative py-10 overflow-hidden bg-gray-400 border border-t-2 border-t-black">
       <div className="relative z-10 px-4 mx-auto max-w-7xl">
-        <div className="flex flex-wrap -m-6">
+        <div className="flex flex-wrap m-6">
           <div className="w-full p-6 md:w-1/2 lg:w-5/12">
             <div className="flex flex-col justify-between h-full">
               <div className="inline-flex items-center mb-4">
